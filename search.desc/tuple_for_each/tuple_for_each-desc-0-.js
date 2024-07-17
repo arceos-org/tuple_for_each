@@ -1,0 +1,1 @@
+searchState.loadedDescShard("tuple_for_each", 0, "tuple_for_each\nProvides macros and methods to iterate over the fields of …")
