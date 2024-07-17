@@ -1,36 +1,4 @@
-//! Provides macros and methods to iterate over the fields of a tuple struct.
-//!
-//! Added methods:
-//! - `is_empty() -> bool`: Whether the tuple has no field.
-//! - `len() -> usize`: Number of items in the tuple.
-//!
-//! Generated macros:
-//!
-//! - `<tuple_name>_for_each!(x in tuple { ... })`
-//! - `<tuple_name>_enumerate!((i, x) in tuple { ... })`
-//!
-//! # Examples
-//!
-//! ```
-//! use tuple_for_each::TupleForEach;
-//!
-//! #[derive(TupleForEach)]
-//! struct FooBar(u32, &'static str, bool);
-//!
-//! let tup = FooBar(23, "hello", true);
-//! assert!(!tup.is_empty());
-//! assert_eq!(tup.len(), 3);
-//!
-//! // prints "23", "hello", "true" line by line
-//! foo_bar_for_each!(x in tup {
-//!     println!("{}", x);
-//! });
-//!
-//! // prints "0: 23", "1: hello", "2: true" line by line
-//! foo_bar_enumerate!((i, x) in tup {
-//!     println!("{}: {}", i, x);
-//! });
-//! ```
+#![doc = include_str!("../README.md")]
 
 use proc_macro::TokenStream;
 use quote::{format_ident, quote};
